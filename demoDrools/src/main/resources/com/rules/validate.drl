@@ -1,0 +1,22 @@
+package rules
+
+import com.example.demo.Vehicle
+
+rule "Rule1"
+	when 
+		vehicleObject: Vehicle(noAccidents==0)
+	then
+		vehicleObject.setPrice(100);
+	end
+rule "RuleName2"
+	when 
+		vehicleObject: Vehicle(noAccidents<20)
+	then
+		vehicleObject.setPrice(200);
+	end
+rule "RuleName3"
+	when 
+		vehicleObject: Vehicle(noAccidents>=20)
+	then
+		vehicleObject.setPrice(400);
+	end
